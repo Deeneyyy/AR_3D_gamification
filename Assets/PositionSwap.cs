@@ -1,21 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class PositionSwap : MonoBehaviour
 {
     public PositionCheck parentObj;
     public Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //print(parentObj.pos);
-    }
+    public float snapDistance = 5f; // Distance required for snapping
 
-    // Update is called once per frame
+    private bool isDragging = false;
+
     void Update()
     {
-        this.transform.position = parentObj.pos + offset;
+        if (Input.GetMouseButtonDown(0)) // Start dragging
+        {
+            isDragging = true;
+        }
+
+        if (Input.GetMouseButtonUp(0)) // Stop dragging and check for snap
+        {
+            isDragging = false;
+            TrySnapToPosition();
+        }
+
+        if (isDragging)
+        {
+            DragObject();
+        }
+    }
+
+    void TrySnapToPosition()
+    {
+        float distance = Vector3.Distance(transform.position, parentObj.pos);
+        if (distance <= snapDistance)
+        {
+            transform.position = parentObj.pos + offset;
+        }
+    }
+
+    void DragObject()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z; // Maintain depth
+        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 }
