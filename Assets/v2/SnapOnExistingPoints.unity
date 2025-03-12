@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 243075310}
   m_Layer: 0
   m_Name: f (2)
-  m_TagString: Blue
+  m_TagString: DropArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a433459dcee8c45810168477f361be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctDestinationTag: Blue
+  destinationTag: DropArea
 --- !u!65 &608990759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a433459dcee8c45810168477f361be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctDestinationTag: Red
+  destinationTag: DropArea
 --- !u!65 &741613240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 1117745109}
   m_Layer: 0
   m_Name: f (1)
-  m_TagString: Green
+  m_TagString: DropArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -752,7 +752,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 1810488855}
   m_Layer: 0
   m_Name: f
-  m_TagString: Red
+  m_TagString: DropArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a433459dcee8c45810168477f361be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctDestinationTag: Green
+  destinationTag: DropArea
 --- !u!65 &2145088440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
