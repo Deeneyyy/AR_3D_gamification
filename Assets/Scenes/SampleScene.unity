@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 1313020582}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 0.5
+  activationRadius: 1
 --- !u!65 &261465324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -734,13 +734,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35020736, y: 0, z: 0, w: 0.9366722}
-  m_LocalPosition: {x: 4.55, y: 8.29, z: -16.66}
+  m_LocalRotation: {x: 0.24856886, y: 0.6508364, z: -0.23920321, w: 0.67631894}
+  m_LocalPosition: {x: -7.86, y: 9.6, z: -2.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 41, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.36, y: 87.8, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 534602412}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 5
+  activationRadius: 5
 --- !u!65 &680084486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 460350494}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 0.5
+  activationRadius: 1
 --- !u!65 &833294866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 2018893959}
   offset: {x: 0, y: 0, z: -0.5}
-  snapDistance: 5
+  activationRadius: 5
 --- !u!65 &988691617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 1323548103}
   offset: {x: -0.5, y: 0, z: 0}
-  snapDistance: 5
+  activationRadius: 5
 --- !u!65 &1467432861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2366,7 +2366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 70887419}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 0.5
+  activationRadius: 1
 --- !u!65 &1737327942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 1946801566}
   offset: {x: 0, y: 0, z: 0.5}
-  snapDistance: 5
+  activationRadius: 5
 --- !u!65 &1843962513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 124674653}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 0.5
+  activationRadius: 1
 --- !u!65 &1886894468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObj: {fileID: 338663495}
   offset: {x: 0.5, y: 0, z: 0}
-  snapDistance: 0.5
+  activationRadius: 1
 --- !u!65 &1914880988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3099,6 +3099,7 @@ GameObject:
   - component: {fileID: 1967179145}
   - component: {fileID: 1967179144}
   - component: {fileID: 1967179143}
+  - component: {fileID: 1967179146}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -3194,6 +3195,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967179141}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1967179146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967179141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37ceb9055b52fe4f9e88f0facd89418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObj: {fileID: 1313020582}
+  offset: {x: 0.5, y: 0, z: 0}
+  activationRadius: 1
 --- !u!1 &2018893957
 GameObject:
   m_ObjectHideFlags: 0
