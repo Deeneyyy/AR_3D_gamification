@@ -4,44 +4,25 @@ using UnityEngine;
 
 public class PositionSwap : MonoBehaviour
 {
-    public PositionCheck parentObj;
-    public Vector3 offset;
-    public float snapDistance = 5f; // Distance required for snapping
-
-    private bool isDragging = false;
+    public PositionCheck parentObj;  // Reference to PositionCheck
+    public Vector3 offset;           // Offset applied to the position
+    public float activationRadius = 5f; // The required distance for snapping
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Start dragging
+        if (Input.GetMouseButtonUp(0)) // Snap only on mouse release
         {
-            isDragging = true;
-        }
-
-        if (Input.GetMouseButtonUp(0)) // Stop dragging and check for snap
-        {
-            isDragging = false;
             TrySnapToPosition();
-        }
-
-        if (isDragging)
-        {
-            DragObject();
         }
     }
 
     void TrySnapToPosition()
     {
         float distance = Vector3.Distance(transform.position, parentObj.pos);
-        if (distance <= snapDistance)
-        {
-            transform.position = parentObj.pos + offset;
-        }
-    }
 
-    void DragObject()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z; // Maintain depth
-        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+        if (distance <= activationRadius) // Snap only if within range
+        {
+            this.transform.position = parentObj.pos + offset;
+        }
     }
 }
