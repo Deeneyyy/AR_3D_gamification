@@ -1,38 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+
 public class DragDrop : MonoBehaviour
 {
     Vector3 offset;
-    public string destinationTag = "DropArea";
- 
+    public string correctDropTag; // Assign this in the Inspector (e.g., "RedDrop" for red object)
+
     void OnMouseDown()
     {
         offset = transform.position - MouseWorldPosition();
-        transform.GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
- 
+
     void OnMouseDrag()
     {
         transform.position = MouseWorldPosition() + offset;
     }
- 
+
     void OnMouseUp()
     {
         var rayOrigin = Camera.main.transform.position;
         var rayDirection = MouseWorldPosition() - Camera.main.transform.position;
         RaycastHit hitInfo;
-        if(Physics.Raycast(rayOrigin, rayDirection, out hitInfo))
+
+        if (Physics.Raycast(rayOrigin, rayDirection, out hitInfo))
         {
-            if(hitInfo.transform.tag == destinationTag)
+            // Snap to any drop area
+            transform.position = hitInfo.transform.position;
+
+            // Check if dropped onto the correct area
+            if (hitInfo.transform.CompareTag(correctDropTag))
             {
-                transform.position = hitInfo.transform.position;
+                Debug.Log(gameObject.name + " is on the correct area! ✅");
+            }
+            else
+            {
+                Debug.Log(gameObject.name + " is on the WRONG area! ❌");
             }
         }
-        transform.GetComponent<Collider>().enabled = true;
+        GetComponent<Collider>().enabled = true;
     }
- 
+
     Vector3 MouseWorldPosition()
     {
         var mouseScreenPos = Input.mousePosition;
