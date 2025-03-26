@@ -6,11 +6,16 @@ public class DragDrop : MonoBehaviour
 {
     Vector3 offset;
     public string correctDropTag; // Assign this in the Inspector (e.g., "RedDrop" for red object)
+    //public GameObject onclickSound; // this is for the audio 
+
 
     void OnMouseDown()
     {
         offset = transform.position - MouseWorldPosition();
         GetComponent<Collider>().enabled = false;
+        //onclickSound.SetActive(true); // audio source seting active 
+        //Debug.Log("audio running");
+
     }
 
     void OnMouseDrag()
